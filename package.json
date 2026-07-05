@@ -12,7 +12,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@ai-sdk/openai-compatible": "^3.0.5",
+    "@ai-sdk/openai-compatible": "^1",
     "@ai-sdk/react": "^2",
     "@fontsource/cormorant-garamond": "^5.2.11",
     "@fontsource/inter": "^5.2.8",
