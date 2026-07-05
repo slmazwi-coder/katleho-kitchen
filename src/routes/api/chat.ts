@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { convertToModelMessages, streamText, type UIMessage } from "ai";
 
-import { createLovableAiGatewayProvider } from "@/lib/ai-gateway.server";
+import { createOpenAiProvider } from "@/lib/openai.server";
 
 const SYSTEM_PROMPT = `You are the friendly concierge for Katleho's Kitchen, a boutique catering house based in Matatiele in South Africa's Eastern Cape.
 
@@ -29,15 +29,15 @@ export const Route = createFileRoute("/api/chat")({
           return new Response("Messages are required", { status: 400 });
         }
 
-        const key = process.env.LOVABLE_API_KEY;
+        const key = process.env.OPENAI_API_KEY;
         if (!key) {
-          return new Response("Missing LOVABLE_API_KEY", { status: 500 });
+          return new Response("Missing OPENAI_API_KEY", { status: 500 });
         }
 
-        const gateway = createLovableAiGatewayProvider(key);
+        const provider = createOpenAiProvider(key);
 
         const result = streamText({
-          model: gateway("google/gemini-3-flash-preview"),
+          model: provider("gpt-4o-mini"),
           system: SYSTEM_PROMPT,
           messages: await convertToModelMessages(messages),
         });
