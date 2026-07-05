@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { ChatWidget } from "@/components/chat-widget";
 import logo from "@/assets/kk-logo.png.asset.json";
 import canapes from "@/assets/canapes-spread.jpg.asset.json";
 import plated from "@/assets/plated-curry.jpg.asset.json";
@@ -315,6 +316,8 @@ function Index() {
           </div>
         </div>
       )}
+
+      <ChatWidget />
     </div>
   );
 }
