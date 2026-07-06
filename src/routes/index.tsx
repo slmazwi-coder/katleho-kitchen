@@ -15,8 +15,8 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { property: "og:image", content: `https://id-preview--41fb6cf3-285c-4ae0-8943-ae7bcf28a60c.lovable.app${white.url}` },
-      { name: "twitter:image", content: `https://id-preview--41fb6cf3-285c-4ae0-8943-ae7bcf28a60c.lovable.app${white.url}` },
+      { property: "og:image", content: white.url },
+      { name: "twitter:image", content: white.url },
     ],
   }),
 });
