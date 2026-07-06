@@ -22,6 +22,8 @@ import { Shimmer } from "@/components/ai-elements/shimmer";
 
 const STORAGE_KEY = "kk-chat-messages-v1";
 const CHAT_ID = "kk-catering-concierge";
+const EMAIL = "katleholepota411@gmail.com";
+const WA = "https://wa.me/27836847541?text=Hi%20Katleho%27s%20Kitchen%2C%20I%27d%20like%20to%20request%20a%20quote";
 
 function loadStoredMessages(): UIMessage[] {
   if (typeof window === "undefined") return [];
@@ -146,7 +148,7 @@ export function ChatWidget() {
                   className="border-none"
                   icon={<UtensilsCrossed className="h-8 w-8 text-gold" />}
                   title="How can we help?"
-                  description="Ask about our catering, service area, or the Signature Pop-Ups."
+                  description="Ask about our catering, service area, or request a quote. You can also WhatsApp us or email katleholepota411@gmail.com"
                 />
               ) : (
                 messages.map((message) => (
@@ -179,7 +181,9 @@ export function ChatWidget() {
 
               {error && (
                 <div className="rounded-md border border-destructive/40 bg-destructive/10 px-3 py-2 text-xs text-destructive">
-                  Sorry — something went wrong. Please try again.
+                  Sorry — something went wrong. Please contact us directly at{" "}
+                  <a href={`mailto:${EMAIL}`} className="underline">{EMAIL}</a> or{" "}
+                  <a href={WA} target="_blank" rel="noreferrer" className="underline">WhatsApp</a>.
                 </div>
               )}
             </ConversationContent>

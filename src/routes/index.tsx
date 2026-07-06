@@ -21,8 +21,10 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const WA = "https://wa.me/27000000000?text=Hi%20Katleho%27s%20Kitchen%2C%20I%27d%20like%20to%20request%20a%20quote";
-const TEL = "tel:+27000000000";
+const WA = "https://wa.me/27836847541?text=Hi%20Katleho%27s%20Kitchen%2C%20I%27d%20like%20to%20request%20a%20quote";
+const TEL = "tel:+27836847541";
+const EMAIL = "mailto:katleholepota411@gmail.com";
+const FACEBOOK = "https://www.facebook.com/share/1EP2XxxRAg/";
 
 const services = [
   {
@@ -75,15 +77,21 @@ function Index() {
             <span className="font-display text-lg tracking-wide sm:block hidden">Katleho's Kitchen</span>
           </a>
           <nav className="hidden md:flex items-center gap-7 text-sm">
-            <a href="#services" className="hover:text-gold transition-colors">Catering</a>
-            <a href="#popups" className="hover:text-gold transition-colors">Pop-Ups</a>
+            <a href="#menu" className="hover:text-gold transition-colors">Menu</a>
+            <a href="#services" className="hover:text-gold transition-colors">Services</a>
             <a href="#gallery" className="hover:text-gold transition-colors">Gallery</a>
             <a href="#region" className="hover:text-gold transition-colors">Service Area</a>
-            <a href="#enquire" className="hover:text-gold transition-colors">Enquire</a>
+            <a href="#contact" className="hover:text-gold transition-colors">Contact</a>
           </nav>
-          <a href="#enquire" className="rounded-full bg-charcoal px-4 py-2 text-xs uppercase tracking-widest text-cream hover:opacity-90 transition-opacity">
-            Request a Quote
-          </a>
+          <div className="flex items-center gap-3">
+            <a href={WA} target="_blank" rel="noreferrer" className="rounded-full bg-green-500 px-4 py-2 text-xs uppercase tracking-widest text-white hover:opacity-90 transition-opacity flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
+            <a href="#enquire" className="rounded-full bg-charcoal px-4 py-2 text-xs uppercase tracking-widest text-cream hover:opacity-90 transition-opacity">
+              Request a Quote
+            </a>
+          </div>
         </div>
       </header>
 
@@ -113,15 +121,34 @@ function Index() {
         </div>
       </section>
 
-      {/* About */}
-      <section className="mx-auto max-w-4xl px-5 py-20 md:py-28 text-center">
-        <div className="text-xs uppercase tracking-[0.35em] text-gold">About</div>
-        <h2 className="mt-3 font-display text-3xl md:text-5xl">A regional catering house, built on real events.</h2>
-        <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
-          Katleho's Kitchen has catered weddings, lobola and uMembeso celebrations, milestone birthdays,
-          graduations, housewarmings and dignified memorial send-offs across the wider Matatiele region —
-          working closely with the area's most trusted decor and event partners, foremost among them{" "}
-          <span className="text-foreground font-medium">Angela Life Events</span>.
+      {/* Menu */}
+      <section id="menu" className="mx-auto max-w-4xl px-5 py-20 md:py-28">
+        <div className="text-center">
+          <div className="text-xs uppercase tracking-[0.35em] text-gold">Menu Highlights</div>
+          <h2 className="mt-3 font-display text-3xl md:text-5xl">Our Signature Offerings</h2>
+        </div>
+        <div className="mt-12 grid gap-8 md:grid-cols-2">
+          {[
+            { title: "Buffet Service", icon: "🍽️", items: ["Full chafing dish setup with gold trim", "Multiple protein options (mutton, chicken, beef)", "Rice, vegetables, salads & breads", "Desserts & fruit platters"] },
+            { title: "Finger Foods & Canapes", icon: "🥂", items: ["Assorted mini pastries & sandwiches", "Seasonal fruit skewers", "Savory bites & spring rolls", "Custom styling available"] },
+            { title: "Salads & Sides", icon: "🥗", items: ["Greek salad with feta", "Coleslaw varieties", "Potato salads & pasta dishes", "Fresh vegetable platters"] },
+            { title: "Desserts", icon: "🍰", items: ["Assorted cake platters", "Fresh fruit displays", "Trifle & custard options", "Custom dessert stations"] },
+          ].map((menu) => (
+            <div key={menu.title} className="rounded-lg border border-border/60 bg-card p-6">
+              <h3 className="font-display text-xl text-gold">{menu.icon} {menu.title}</h3>
+              <ul className="mt-4 space-y-2">
+                {menu.items.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <span className="text-gold mt-1">✦</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-center text-muted-foreground">
+          Menu items can be customized to suit your event. <a href="#contact" className="text-gold hover:underline">Contact us</a> for a tailored quote.
         </p>
       </section>
 
@@ -292,6 +319,45 @@ function Index() {
         </div>
       </section>
 
+      {/* Contact */}
+      <section id="contact" className="bg-charcoal text-cream py-20 md:py-28">
+        <div className="mx-auto max-w-4xl px-5">
+          <div className="text-center">
+            <div className="text-xs uppercase tracking-[0.35em] text-gold">Get In Touch</div>
+            <h2 className="mt-3 font-display text-3xl md:text-5xl">Contact Katleho's Kitchen</h2>
+          </div>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <a href={WA} target="_blank" rel="noreferrer" className="group flex flex-col items-center gap-4 rounded-lg border border-cream/20 p-6 hover:border-green-500 hover:bg-green-500/10 transition-all">
+              <div className="h-14 w-14 rounded-full bg-green-500/20 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" className="text-green-500"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </div>
+              <div className="text-center">
+                <h3 className="font-display text-lg">WhatsApp</h3>
+                <p className="mt-1 text-cream/70 text-sm">+27 83 684 7541</p>
+              </div>
+            </a>
+            <a href={EMAIL} className="group flex flex-col items-center gap-4 rounded-lg border border-cream/20 p-6 hover:border-gold hover:bg-gold/10 transition-all">
+              <div className="h-14 w-14 rounded-full bg-gold/20 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div className="text-center">
+                <h3 className="font-display text-lg">Email</h3>
+                <p className="mt-1 text-cream/70 text-sm">katleholepota411@gmail.com</p>
+              </div>
+            </a>
+            <a href={FACEBOOK} target="_blank" rel="noreferrer" className="group flex flex-col items-center gap-4 rounded-lg border border-cream/20 p-6 hover:border-blue-500 hover:bg-blue-500/10 transition-all">
+              <div className="h-14 w-14 rounded-full bg-blue-500/20 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" className="text-blue-500"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </div>
+              <div className="text-center">
+                <h3 className="font-display text-lg">Facebook</h3>
+                <p className="mt-1 text-cream/70 text-sm">Follow us on Facebook</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="border-t border-border bg-background">
         <div className="mx-auto max-w-6xl px-5 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
@@ -299,7 +365,17 @@ function Index() {
             <img src={logo.url} alt="" className="h-10 w-auto" />
             <span className="font-display text-base text-foreground">Katleho's Kitchen</span>
           </div>
-          <p className="text-center">Trusted catering across Matatiele, Mount Fletcher & Kokstad.</p>
+          <div className="flex items-center gap-4">
+            <a href={WA} target="_blank" rel="noreferrer" className="text-green-500 hover:text-green-600" aria-label="WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+            <a href={EMAIL} className="hover:text-gold" aria-label="Email">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+            <a href={FACEBOOK} target="_blank" rel="noreferrer" className="hover:text-blue-500" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
           <p>© {new Date().getFullYear()} Katleho's Kitchen</p>
         </div>
       </footer>
